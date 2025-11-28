@@ -27,6 +27,7 @@ This README explains a **basic practical setup** of Ansible using **4 EC2 instan
 - Slave nodes do **not** need Ansible
 - Copy your `.pem` key from your **local machine** to the master node
 - Configure Ansible inventory on the master node
+- And the correct way to handle host key verification for many servers
 - Test Ansible connection using `ping` module
 
 ---
