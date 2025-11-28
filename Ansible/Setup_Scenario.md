@@ -34,7 +34,7 @@ ssh-copy-id ubuntu@server2  #Public IP
 ssh-copy-id ubuntu@server3  #Public IP
 ```
 
-### Step 3: Inventory File Example
+### Step 3: Host File Example
 ```ini
 [web]
 server1 ansible_host=IP1
