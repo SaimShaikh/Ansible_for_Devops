@@ -176,18 +176,24 @@ server-2 | UNREACHABLE! => {
 }
 
 ```
-Do This
-Run on master:
-```ssh -i /home/ubuntu/keys/mykey.pem ubuntu@10.0.0.11```
-- When prompted:
- - Are you sure you want to continue connecting (yes/no)? 
- - Type:yes
- - Repeat for the remaining servers:
- - This step adds each server's fingerprint to Test Ansible Connectivity
- ``~/.ssh/known_hosts``
-
+## Do This 
 ```bash
+vim servers.txt
+In This add Your Servers IPs for eg like this 
+13.235.90.15
+13.201.134.75
+10.0.0.13
+```
+
+## Run ssh-keyscan
+```bash
+for IP in $(cat servers.txt); do
+    ssh-keyscan -H "$IP" >> ~/.ssh/known_hosts
+done
+
+and Tst again
 ansible servers -m ping
+
 ```
 
 
