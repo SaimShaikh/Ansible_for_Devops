@@ -62,7 +62,7 @@ Simple example:
 ---
 - name: Install and start Nginx on web servers
   hosts: web
-  become: yes
+  become: yes  # Use for as Sudo User 
 
   tasks:
     - name: Install Nginx
@@ -77,6 +77,11 @@ Simple example:
         state: started
         enabled: yes
 ```
+Output
+<img width="3305" height="1155" alt="image" src="https://github.com/user-attachments/assets/95b4e871-07c8-4cf6-9c13-4d46ca9e0deb" />
+
+<img width="1907" height="998" alt="image" src="https://github.com/user-attachments/assets/bacc6a7a-77c0-4b63-bd80-386e46dd956a" />
+
 Play for Print Data (vim data_play.yml)
 
 ```bash
