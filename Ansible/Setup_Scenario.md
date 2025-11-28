@@ -29,9 +29,9 @@ ssh-keygen
 
 ### Step 2: Copy the Key to Each Server
 ```bash
-ssh-copy-id ubuntu@server1
-ssh-copy-id ubuntu@server2
-ssh-copy-id ubuntu@server3
+ssh-copy-id ubuntu@server1  #Public IP
+ssh-copy-id ubuntu@server2  #Public IP
+ssh-copy-id ubuntu@server3  #Public IP
 ```
 
 ### Step 3: Inventory File Example
