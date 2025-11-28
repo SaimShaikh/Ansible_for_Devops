@@ -196,5 +196,7 @@ and Tst again
 ansible servers -m ping
 
 ```
+## Output 
+<img width="908" height="298" alt="Screenshot 2025-11-28 at 10 18 44 PM (2)" src="https://github.com/user-attachments/assets/e0c77441-fda8-4638-8c02-bec8aeb00f4a" />
 
 
