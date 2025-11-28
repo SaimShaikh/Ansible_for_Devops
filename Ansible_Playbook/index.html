@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Server Dashboard</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      font-family: "Poppins", sans-serif;
+      color: white;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 60px auto;
+      text-align: center;
+    }
+
+    h1 {
+      font-weight: 600;
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    p.subtitle {
+      font-weight: 300;
+      font-size: 1.2rem;
+      opacity: 0.8;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 25px;
+      border-radius: 20px;
+      margin: 20px auto;
+      max-width: 500px;
+      text-align: left;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .card h2 {
+      margin-bottom: 10px;
+      font-weight: 600;
+      color: #fff;
+      font-size: 1.6rem;
+    }
+
+    .info-item {
+      margin: 8px 0;
+      font-size: 1.1rem;
+    }
+
+    .label {
+      font-weight: 600;
+      color: #ffd369;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Server Status Dashboard</h1>
+    <p class="subtitle">Live system info from Ansible ✅</p>
+
+    <div class="card">
+      <h2>System Information</h2>
+
+      <div class="info-item">
+        <span class="label">Server IP:</span>
+        <span>{{ ansible_default_ipv4.address }}</span>
+      </div>
+
+      <div class="info-item">
+        <span class="label">Free Storage (/):</span>
+        <span>{{ disk_free.stdout }}</span>
+      </div>
+
+      <div class="info-item">
+        <span class="label">Uptime:</span>
+        <span>{{ uptime.stdout }}</span>
+      </div>
+
+      <div class="info-item">
+        <span class="label">User:</span>
+        <span>{{ current_user.stdout }}</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
