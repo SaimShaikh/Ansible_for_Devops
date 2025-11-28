@@ -198,5 +198,6 @@ ansible servers -m ping
 ```
 ## Output 
 <img width="908" height="298" alt="Screenshot 2025-11-28 at 10 18 44 PM (2)" src="https://github.com/user-attachments/assets/e0c77441-fda8-4638-8c02-bec8aeb00f4a" />
+<img width="2195" height="1218" alt="image" src="https://github.com/user-attachments/assets/62b33e53-e697-4b30-8bce-d71e130788e8" />
 
 
