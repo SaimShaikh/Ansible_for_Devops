@@ -157,17 +157,37 @@ If you see `SUCCESS` with `ping: "pong"` for all three servers,
 ✅ your Ansible basic practical setup is working correctly.
 
 ---
+If You receives any Error like 
+```bash
+[ERROR]: Task failed: Failed to connect to the host via ssh: Host key verification failed.
+Origin: <adhoc 'ping' task>
 
-## ✅ Summary
+{'action': 'ping', 'args': {}, 'timeout': 0, 'async_val': 0, 'poll': 15}
 
-- 4 EC2 instances (1 master, 3 slaves) using the same `.pem` key
-- Ansible installed **only on the master node**
-- `.pem` key transferred from local → master and stored in `/home/ubuntu/keys/`
-- Inventory configured in `/etc/ansible/hosts`
-- Connectivity verified using:
+server-1 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Task failed: Failed to connect to the host via ssh: Host key verification failed.",
+    "unreachable": true
+}
+server-2 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Task failed: Failed to connect to the host via ssh: Host key verification failed.",
+    "unreachable": true
+}
+
+```
+Do This
+Run on master:
+```ssh -i /home/ubuntu/keys/mykey.pem ubuntu@10.0.0.11```
+- When prompted:
+ - Are you sure you want to continue connecting (yes/no)? 
+ - Type:yes
+ - Repeat for the remaining servers:
+ - This step adds each server's fingerprint to Test Ansible Connectivity
+ ``~/.ssh/known_hosts``
 
 ```bash
 ansible servers -m ping
 ```
 
-You now have a working **Ansible lab** and can start writing playbooks to manage all 3 slave servers from your master node.
+
