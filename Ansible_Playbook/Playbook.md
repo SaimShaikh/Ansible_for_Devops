@@ -77,6 +77,24 @@ Simple example:
         state: started
         enabled: yes
 ```
+Play for Print Data (vim data_play.yml)
+
+```bash
+- name: Dates Playbook
+  hosts: servers
+  gather_facts: false
+  tasks:
+    - name: Show date
+      command: date
+
+    - name: Show date again
+      command: date
+
+```
+and apply  ``ansible-playbook date_play.yml``
+OutPut
+<img width="3293" height="1156" alt="image" src="https://github.com/user-attachments/assets/715c70ee-e494-4af7-921a-37da0a72b3db" />
+
 
 ---
 
