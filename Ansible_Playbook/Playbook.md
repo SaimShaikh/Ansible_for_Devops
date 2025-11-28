@@ -103,7 +103,7 @@ OutPut
 
 ---
 Deploying Webapp using Nginx (vim webapp.yml)
-Also create index.html
+Also create index.html [index.html](https://github.com/SaimShaikh/Ansible_for_Devops/blob/main/Ansible_Playbook/index.html)
 ```bash
 - name: Deploy static web app with real server data
   hosts: servers
@@ -140,6 +140,8 @@ Also create index.html
         state: started
         enabled: yes
 ```
+Output
+<img width="1902" height="1032" alt="image" src="https://github.com/user-attachments/assets/f0ff00e1-de3b-4ea4-bd5b-d7aa045584f9" />
 
 
 ---
