@@ -82,6 +82,7 @@ Output
 
 <img width="1907" height="998" alt="image" src="https://github.com/user-attachments/assets/bacc6a7a-77c0-4b63-bd80-386e46dd956a" />
 
+---
 Play for Print Data (vim data_play.yml)
 
 ```bash
@@ -100,6 +101,45 @@ and apply  ``ansible-playbook -v data_play.yml``
 OutPut
 <img width="3326" height="876" alt="image" src="https://github.com/user-attachments/assets/ce24c32e-20cd-44d3-bcd4-1f038afbf6eb" />
 
+---
+Deploying Webapp using Nginx (vim webapp.yml)
+Also create index.html
+```bash
+- name: Deploy static web app with real server data
+  hosts: servers
+  become: yes
+
+  tasks:
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+
+    - name: Get free storage on root filesystem
+      shell: df -h / | awk 'NR==2 {print $4}'
+      register: disk_free
+
+    - name: Get uptime
+      shell: uptime -p
+      register: uptime
+
+    - name: Get current user
+      shell: whoami
+      register: current_user
+
+    - name: Deploy dynamic index.html
+      template:
+        src: index.html
+        dest: /var/www/html/index.html
+        mode: "0644"
+
+    - name: Ensure Nginx is running
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+```
 
 
 ---
