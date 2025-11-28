@@ -91,9 +91,10 @@ Play for Print Data (vim data_play.yml)
       command: date
 
 ```
-and apply  ``ansible-playbook date_play.yml``
+and apply  ``ansible-playbook -v data_play.yml``
 OutPut
-<img width="3293" height="1156" alt="image" src="https://github.com/user-attachments/assets/715c70ee-e494-4af7-921a-37da0a72b3db" />
+<img width="3326" height="876" alt="image" src="https://github.com/user-attachments/assets/ce24c32e-20cd-44d3-bcd4-1f038afbf6eb" />
+
 
 
 ---
