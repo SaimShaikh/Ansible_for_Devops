@@ -157,7 +157,7 @@ Basic structure:
 ```yaml
 ---
 - name: <Play 1 name>
-  hosts: <group or host>
+  hosts: <group or host Which You Created In hostfile >
   become: yes/no
   vars:
     key: value
