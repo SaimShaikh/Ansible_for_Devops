@@ -34,23 +34,17 @@ To avoid this, set the correct SSH user per server or per group.
 Create a file named **inventory.ini**:
 
 ```
-[ubuntu_servers]
-ubuntu1 ansible_host=18.201.102.34
-ubuntu2 ansible_host=54.154.36.177
+sallies!
+server1 ansible_host=18.201.102.3
+server2 ansible_host=54.154.36.177
 
-[amazon_servers]
-amazon1 ansible_host=3.92.44.12
-amazon2 ansible_host=44.201.10.55
+server1 ansible_user=ubuntu #Machine User Name
+server2 ansible_user=ec2-user  #Machine User Name
 
 [all:vars]
 ansible_python_interpreter=/usr/bin/python3
 ansible_ssh_private_key=/home/ubuntu/keys/YOUR_KEY.pem
 
-[ubuntu_servers:vars]
-ansible_user=ubuntu
-
-[amazon_servers:vars]
-ansible_user=ec2-user
 ```
 
 ---
