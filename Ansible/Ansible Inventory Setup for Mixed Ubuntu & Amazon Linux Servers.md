@@ -46,6 +46,8 @@ ansible_python_interpreter=/usr/bin/python3
 ansible_ssh_private_key=/home/ubuntu/keys/YOUR_KEY.pem
 
 ```
+Validate Using
+```ansible-inventory --list```
 
 ---
 
