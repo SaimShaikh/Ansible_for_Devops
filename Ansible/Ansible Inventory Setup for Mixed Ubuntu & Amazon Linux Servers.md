@@ -44,7 +44,7 @@ amazon2 ansible_host=44.201.10.55
 
 [all:vars]
 ansible_python_interpreter=/usr/bin/python3
-ansible_ssh_private_key=/home/ubuntu/keys/batch-8-ansible.pem
+ansible_ssh_private_key=/home/ubuntu/keys/YOUR_KEY.pem
 
 [ubuntu_servers:vars]
 ansible_user=ubuntu
