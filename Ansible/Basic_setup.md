@@ -1,3 +1,4 @@
+<img width="2239" height="1047" alt="image" src="https://github.com/user-attachments/assets/5a4da965-3f2a-4842-bb06-dba4778d065d" />
 
 # Basic Ansible Practical Lab on AWS EC2
 
