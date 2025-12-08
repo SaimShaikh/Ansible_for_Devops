@@ -56,7 +56,7 @@ Ansible Vault **encrypts** your sensitive data (passwords, API keys, SSH keys, e
 
 ## What is Ansible Vault?
 
-**Ansible Vault** is a built-in Ansible feature that **encrypts sensitive data** using a password.[55][58]
+**Ansible Vault** is a built-in Ansible feature that **encrypts sensitive data** using a password
 
 ### Simple Definition
 
@@ -66,7 +66,7 @@ Vault is like a locked safe:
 
 ### How It Works[55][64]
 
-Ansible Vault uses **AES256 encryption** (military-grade security) with a **symmetric key** (one password unlocks everything).[64]
+Ansible Vault uses **AES256 encryption** (military-grade security) with a **symmetric key** (one password unlocks everything).
 
 **The Process:**
 
@@ -77,7 +77,7 @@ Ansible Vault uses **AES256 encryption** (military-grade security) with a **symm
 5. Vault decrypts the data only when needed
 6. Your playbooks run with the decrypted values
 
-### What Can Vault Encrypt?[64]
+### What Can Vault Encrypt?
 
 You can encrypt:
 - **Variable files** (group_vars, host_vars)
@@ -117,7 +117,7 @@ You want to deploy 100 servers with specific passwords, API keys, and SSH creden
 
 ## Benefits of Using Ansible Vault
 
-### 1. Security[55]
+### 1. Security
 
 Your sensitive data is encrypted, not visible in plain text.
 
@@ -132,7 +132,7 @@ password: !vault |
   6434616263643237310a653261333165396231326531343336320a616261313065
 ```
 
-### 2. Version Control Safety[55][56]
+### 2. Version Control Safety
 
 You can safely commit encrypted files to GitHub without exposing secrets.
 
@@ -144,21 +144,21 @@ git push origin main
 
 **Important**: Only commit the encrypted vault files, not the password file!
 
-### 3. Team Collaboration[56]
+### 3. Team Collaboration
 
 Multiple team members can use the same encrypted playbooks:
 - Share the playbook and encrypted vault file
 - Only share the vault password through a secure channel (password manager, not email)
 - Everyone can run the same playbooks
 
-### 4. Easy Secret Rotation[56]
+### 4. Easy Secret Rotation
 
 Need to change a password? Update it once in the vault:
 - Change password in vault
 - All playbooks automatically use the new password
 - No need to update multiple files
 
-### 5. Compliance and Auditing[55][56]
+### 5. Compliance and Auditing
 
 Many organizations require:
 - Secrets to be encrypted
@@ -167,7 +167,7 @@ Many organizations require:
 
 Vault helps you meet these requirements.
 
-### 6. Simple Implementation[60]
+### 6. Simple Implementation
 
 - Built into Ansible (no additional tools needed)
 - Works with existing playbooks
