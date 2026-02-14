@@ -445,3 +445,105 @@ I would create an Ansible role that defines the desired state of the Apache conf
 ## Q25. Your team is deploying a new version of a web application across multiple servers. How would you use Ansible to automate the deployment process?
 
 I would automate the deployment by creating an Ansible playbook that pulls the latest version of the application from version control and deploys it across all target servers. The playbook would stop the currently running application, copy the new application files, apply any required configuration updates, and then start the updated application. By running this process through Ansible, the deployment remains consistent, repeatable, and reliable across all servers.
+
+
+---
+
+## Q26. You want to perform rolling updates to a group of servers without causing downtime. How would you implement this using Ansible?
+
+To perform rolling updates in Ansible, I use the serial keyword to limit how many servers are updated at a time. The playbook updates one server, restarts the application, verifies it is healthy, and then proceeds to the next server. This ensures that other servers remain available, allowing deployments to happen without downtime.
+
+---
+
+## Q27. You have a load balancer that needs to be updated with the IP addresses of newly provisioned servers. How would you automate this task with Ansible?
+
+I would automate this by using Ansible to dynamically retrieve information about newly provisioned servers using cloud fact modules. Ansible would extract the IP addresses of the running instances and update the load balancer configuration accordingly using the appropriate module or template. This ensures the load balancer is always updated automatically without manual intervention.
+
+
+---
+
+## Q28. Your organization requires regular security patching of servers. How would you automate the process using Ansible?
+
+I would automate security patching by creating an Ansible playbook that uses the appropriate package manager modules, such as yum or apt, to apply security updates on Linux servers. The playbook would be scheduled to run periodically using Ansible Tower or a CI/CD pipeline, ensuring servers are patched regularly and consistently while minimizing manual effort.
+
+---
+
+## Q29. You need to automate the backup of a MySQL database running on multiple servers. How would you accomplish this with Ansible?
+
+I would automate MySQL backups by creating an Ansible playbook that connects to each database server, runs a mysqldump command to create a backup, and transfers the backup file to a central storage location. The playbook would be scheduled to run regularly using Ansible Tower or a scheduler to ensure consistent and reliable database backups.
+
+---
+
+## Q30.  In the event of a disaster, you need to restore a critical application to a previous state using Ansible. How would you implement this?
+
+In a disaster scenario, I would use Ansible to automate application recovery by creating a playbook that retrieves application and configuration backups from storage, deploys them to the target servers, restores database backups, reinstalls dependencies, and restarts services. This ensures the application is fully restored to its previous state in a consistent and repeatable manner.
+
+---
+
+## Q31. You have separate development, staging, and production environments, each with different configuration settings. How would you manage deployments across these environments using Ansible?
+
+I manage deployments across development, staging, and production by defining separate inventory groups for each environment and using environment-specific variables. The same Ansible playbooks and roles are reused, while configuration differences are handled through variables and dynamic inventory. This ensures consistency across environments while allowing environment-specific customization.
+
+---
+
+## Q32. You need to configure a high availability setup for a critical application using Ansible. How would you approach this task?
+
+• I would create an Ansible
+playbook that provisions
+redundant infrastructure
+components, such as load
+balancers, auto-scaling
+groups, and database
+clusters, across multiple
+availability zones or regions.
+• The playbook would include
+tasks to configure failover
+mechanisms, health checks,
+and monitoring alerts to
+ensure continuous
+availability and resilience of
+the application.
+
+---
+
+## Q33.  You're responsible for managing a Kubernetes cluster and need to automate routine maintenance tasks. How would you use Ansible for cluster management?
+
+I use Ansible to automate Kubernetes cluster management by leveraging Kubernetes modules or command-line tools like kubectl. Ansible playbooks handle tasks such as node provisioning, pod deployments, configuration updates, and cluster scaling. This approach standardizes cluster operations, ensures consistent configuration, and reduces manual intervention.
+
+---
+
+## Q34.  Your organization needs to ensure compliance with security policies and regulatory requirements. How would you use Ansible to perform compliance checks?
+
+I would use Ansible to automate compliance by creating playbooks that perform security scans, configuration audits, and compliance checks against predefined policies or benchmarks. Ansible assesses the current system state, reports deviations, and can automatically remediate non-compliant configurations, ensuring systems remain secure and compliant over time.
+
+---
+
+## Q35.  Your organization is migrating workloads from on-premises data centers to the cloud. How would you orchestrate the migration process with Ansible?
+
+I would orchestrate the migration using Ansible by first assessing on-prem systems, provisioning cloud infrastructure, and applying the same configuration using Ansible roles. Application files and data would be migrated using Ansible playbooks, followed by validation and phased cutover. This approach ensures a controlled, repeatable, and low-risk migration from on-prem to cloud.
+
+---
+
+## Q36. You want to implement self-healing capabilities for critical systems using Ansible. How would you design and deploy self-healing workflows?
+
+• I would create Ansible
+playbooks that monitor
+system health and
+performance metrics, detect
+anomalies or failures, and
+trigger automated
+remediation actions to
+restore service availability.
+By integrating Ansible with
+monitoring and alerting
+systems, I can orchestrate
+self-healing workflows that
+proactively respond to
+incidents and minimize
+downtime, ensuring
+continuous operation of
+critical systems.
+
+---
+
+
