@@ -546,4 +546,99 @@ critical systems.
 
 ---
 
+## Q37. What causes the "Error: UNREACHABLE!" in Ansible, and how do you fix it?
+
+The UNREACHABLE! error in Ansible occurs when Ansible cannot connect to the target host, usually due to SSH issues such as incorrect credentials, wrong IP address, blocked ports, firewall rules, or the host being down. To fix it, I verify SSH access manually, check inventory details, validate network connectivity, and use verbose mode to identify the exact cause.
+
+---
+
+## Q38. How do you resolve the "Error: Missing sudo password" in Ansible?
+
+The “Missing sudo password” error occurs when Ansible tries to run tasks with elevated privileges but does not have the sudo password. I resolve it by either running the playbook with --ask-become-pass, configuring passwordless sudo for the Ansible user, or securely providing the sudo password using Ansible Vault.
+
+---
+
+## Q39. What is the "Error: Permission denied" in Ansible, and how do you troubleshoot it?
+
+The “Permission denied” error in Ansible occurs when the connected user does not have sufficient permissions to execute a task, such as modifying system files or installing packages. I troubleshoot it by checking sudo access, ensuring become is configured correctly, verifying file permissions, confirming the correct SSH user is used, and running Ansible in verbose mode to identify the exact failure.
+
+
+---
+
+## Q40 How do you fix the "Error: Hosts not found" in Ansible?
+
+The “Hosts not found” error occurs when Ansible cannot find any hosts matching the specified pattern in the inventory. I fix it by verifying the inventory file, ensuring the group or host names match the playbook, checking inventory syntax, confirming the correct inventory is being used, and validating dynamic inventory output.
+
+---
+
+## Q41. What does the "Error: Module failure" indicate in Ansible, and how can you resolve it?
+
+The “Module failure” error in Ansible indicates that a module executed on the target host but failed due to incorrect parameters, missing dependencies, unsupported operating systems, or insufficient permissions. I resolve it by reviewing the module error output, running Ansible in verbose mode, validating module arguments, checking dependencies, and ensuring the correct privileges are used.
+
+---
+
+## Q42.  How do you handle the "Error: SSH Authentication failed" in Ansible?
+
+The “SSH Authentication failed” error occurs when Ansible cannot authenticate to the target host due to incorrect usernames, wrong SSH keys, missing permissions, or disabled authentication methods. I resolve it by verifying manual SSH access, checking the SSH user and key configuration, fixing key permissions, and using verbose mode to identify the exact cause.
+
+---
+
+## Q43. How do you resolve the "Error: Syntax error" in Ansible playbooks?
+
+The “Syntax error” in Ansible occurs when the playbook YAML is written incorrectly, commonly due to indentation issues, missing dashes, incorrect colons, or unclosed quotes. I resolve it by running ansible-playbook --syntax-check, carefully reviewing the reported line number, and fixing the YAML formatting issues.
+
+---
+
+## Q44. What is the "Error: undefined variable" in Ansible, and how do you fix it?
+
+The “undefined variable” error in Ansible occurs when a playbook references a variable that is not defined or not accessible due to scope issues. I fix it by ensuring the variable is defined in the correct location, checking for typos, validating variable precedence and scope, enabling fact gathering if required, or using default values to prevent failures.
+
+
+---
+
+## Q45. How do you troubleshoot the "Error: Failed to connect to the host via ssh" in Ansible?
+
+The “Failed to connect to the host via ssh” error occurs when Ansible cannot establish an SSH connection to the target host. I troubleshoot it by first testing SSH manually, verifying the correct username and SSH key, checking key permissions, confirming firewall and security group rules, validating the SSH port, and using verbose mode to identify the exact failure.
+
+---
+
+## Q46. What causes the "Error: No hosts matched" in Ansible, and how do you resolve it?
+
+The “No hosts matched” error occurs when Ansible cannot find any hosts in the inventory that match the hosts pattern in the playbook. I resolve it by verifying inventory files, ensuring the group or host names match exactly, checking inventory syntax, and validating dynamic inventory output.
+
+---
+
+## Q47. How do you fix the "Error: command not found" when running a playbook in Ansible?
+
+The “command not found” error occurs when Ansible runs a command that is not installed or not available in the system PATH on the target host. I fix it by installing the required package, correcting the command name, using the full command path, or replacing shell commands with the appropriate Ansible modules.
+
+---
+
+## Q48. How do you handle the "Error: Template error" in Ansible?
+
+A “Template error” occurs when Ansible fails to render a Jinja2 template due to undefined variables, syntax errors, or scope issues. I resolve it by validating Jinja syntax, ensuring all variables are defined and accessible, using default values, and debugging variables to identify the root cause.
+
+----
+
+## Q49. What is the "Error: Task includes an undefined variable" in Ansible, and how can you fix it?
+
+The “Task includes an undefined variable” error occurs when a task references a variable that is not defined or not accessible due to scope issues. I fix it by defining the variable in the correct place, correcting typos, ensuring fact gathering is enabled if required, or using default values to avoid failures.
+
+---
+
+## Q50. How do you troubleshoot the "Error: Failed to download remote file" in Ansible?
+
+The “Failed to download remote file” error occurs when Ansible cannot retrieve a file from a remote URL due to network issues, invalid URLs, firewall or proxy restrictions, permission problems, or SSL certificate failures. I troubleshoot it by manually testing the URL from the target host, checking network connectivity and permissions, and running Ansible in verbose mode to identify the exact cause.
+
+
+---
+
+## Q51. What causes the "Error: Unsupported parameter" in Ansible, and how do you resolve it?
+
+The “Unsupported parameter” error occurs when a module receives an argument that it does not recognize, usually due to typos, incorrect module usage, outdated documentation, or Ansible version mismatches. I resolve it by checking the module’s official documentation, validating parameter names, fixing indentation issues, or upgrading Ansible if required.
+
+
+---
+
+
 
