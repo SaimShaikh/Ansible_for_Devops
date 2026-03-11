@@ -103,7 +103,7 @@ In a cloud environment where EC2 instances are created and deleted dynamically, 
 
 ## Q6. What is Ansible Tower
 
-In our organization, we use Ansible Tower so different teams can run automation jobs without accessing servers directly. Tower controls access, stores credentials securely, schedules jobs, and provides logs for auditing.
+Ansible Tower is the enterprise web-based automation platform for Ansible that provides a graphical interface, role-based access control, job scheduling, centralized logging, and API integration to manage and run Ansible playbooks at scale.
 
 ---
 
