@@ -640,5 +640,30 @@ The “Unsupported parameter” error occurs when a module receives an argument 
 
 ---
 
+## Q52. whats is verbose mode in anisble
 
+Verbose in Ansible means showing detailed logs of what Ansible is doing during execution.
+
+-v (or --verbose): Default level. Shows task names and basic output (e.g., success/failure, return values). 
+-vv: Adds input parameters (variables, module options) for each task, useful for verifying variable substitution. 
+-vvv: Includes connection details (SSH commands, temporary file paths, Python interpreter used), ideal for troubleshooting connectivity or permission issues. 
+-vvvv: Displays raw SSH protocol exchanges and internal plugin logic — used only for deep debugging or reporting bugs. 
+
+
+---
+
+## Q53. Ansible templates
+
+Ansible templates are used to create configuration files dynamically by replacing variables in a template file using Jinja2.
+
+
+---
+
+## Q54. what is the copy module in ansible 
+
+The Ansible copy module is used to transfer files from the control node to managed nodes without modifying the file content.
+When Ansible runs, it replaces those variables with real values and creates the final file on the server.
+
+
+---
 
